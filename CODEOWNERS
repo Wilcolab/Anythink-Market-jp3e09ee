@@ -1,12 +1,6 @@
-* @team-lead @maintainers
+# Example CODEOWNERS file
+# Specify owners for specific directories or files
 
-backend/ @backend-devs
-
-
-frontend/ @frontend-devs
-
-
-charts/ @devops-team
-
-
-*.md @docs-team
+* @username     # Default owner for all files in the repo
+/docs/ @docuser  # Owner for the docs folder
+/api/ @apiowner  # Owner for the API-related code
