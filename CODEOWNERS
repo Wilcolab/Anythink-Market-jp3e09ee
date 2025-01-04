@@ -1,6 +1,6 @@
 # Example CODEOWNERS file
 # Specify owners for specific directories or files
 
-* @username     # Default owner for all files in the repo
-/docs/ @docuser  # Owner for the docs folder
-/api/ @apiowner  # Owner for the API-related code
+* @ImmodestNeRo     # Default owner for all files in the repo
+/docs/ @ImmodestNeRo  # Owner for the docs folder
+/api/ @ImmodestNeRo  # Owner for the API-related code
