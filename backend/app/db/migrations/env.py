@@ -8,6 +8,7 @@ from sqlalchemy import engine_from_config, pool
 sys.path.append(str(pathlib.Path(__file__).resolve().parents[3]))
 
 from app.core.config import get_app_settings  # isort:skip
+from app.models.domain import Base
 
 SETTINGS = get_app_settings()
 
@@ -19,7 +20,7 @@ config = context.config
 
 fileConfig(config.config_file_name)  # type: ignore
 
-target_metadata = None
+target_metadata = Base.metadata
 
 config.set_main_option("sqlalchemy.url", str(DATABASE_URL))
 

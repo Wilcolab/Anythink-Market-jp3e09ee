@@ -13,6 +13,7 @@ class UserInLogin(RWSchema):
 
 class UserInCreate(UserInLogin):
     username: str
+    isVerified: bool = False #my new code
 
 
 class UserInUpdate(BaseModel):

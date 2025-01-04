@@ -34,6 +34,8 @@ async def list_items(
     user: Optional[User] = Depends(get_current_user_authorizer(required=False)),
     items_repo: ItemsRepository = Depends(get_repository(ItemsRepository)),
 ) -> ListOfItemsInResponse:
+    is_verified = user.isVerified if user else None
+
     items = await items_repo.filter_items(
         tag=items_filters.tag,
         seller=items_filters.seller,
@@ -41,6 +43,7 @@ async def list_items(
         limit=items_filters.limit,
         offset=items_filters.offset,
         requested_user=user,
+        isVerified=is_verified,        
     )
     items_for_response = [
         ItemForResponse.from_orm(item) for item in items
